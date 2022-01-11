@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Core/NP.Utilities/bin/Debug/net6.0
+/Core/NP.Utilities/obj
+/src/MainApp/.vs/MainApp
+/src/MainApp/bin/Debug/net6.0
+/src/MainApp/obj
+/Tests/NP.Utility.Tests/bin/Debug/net6.0
+/Tests/NP.Utility.Tests/obj
