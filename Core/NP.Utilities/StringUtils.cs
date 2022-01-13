@@ -2,38 +2,29 @@
 {
     public static class StringUtils
     {
-        public static (string start, string? end) BreakIntoTwoParts(this string str, string? separator)
+        public static (string startStrPart, string endStrPart) BreakStringIntoTwoParts(this string str, string separator)
         {
-            string start = str, end = String.Empty;
+            int separatorIdx = str.Length;
+            int endPartBeginIdx = str.Length;
 
-            if (separator == null)
+            if (separator != null)
             {
-                return (start, end);
+                int realSeparatorIdx = str.IndexOf(separator);
+
+                if (realSeparatorIdx != -1)
+                {
+                    separatorIdx = realSeparatorIdx;
+
+                    endPartBeginIdx = separatorIdx + separator.Length;
+                }
             }
 
-            int separatorIdx = str.IndexOf(separator);
+            string startStrPart = str.Substring(0, separatorIdx);
 
-            int firstPartLen = separatorIdx;
+            string endStrPart = str.Substring(endPartBeginIdx);
 
-            if (separatorIdx < 0)
-            {
-                firstPartLen = str.Length;
-            }
-            
-            start = str.Substring(0, firstPartLen);
-
-            if (separatorIdx >= 0)
-            {
-                int secondPartIdx = separatorIdx + separator.Length;
-
-                end = str.Substring(secondPartIdx);
-            }
-            else
-            {
-                end = String.Empty;
-            }
-
-            return (start, end);
+            return (startStrPart, endStrPart);
         }
+
     }
 }

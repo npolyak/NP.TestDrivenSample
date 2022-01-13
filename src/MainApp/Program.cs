@@ -2,8 +2,7 @@
 using NP.Utilities;
 
 string str = "Hello World!";
+string separator = "ll"; // startStrPart="He" endStrPart="o World!"
 
-(string start, string? end) = str.BreakIntoTwoParts("ll"); // should break it into "He" and "o World!"
+(string startStrPart, string endStrPart) = str.BreakStringIntoTwoParts(separator);
 
-Console.WriteLine($"Start='{start}'");
-Console.WriteLine($"End='{end}'");
