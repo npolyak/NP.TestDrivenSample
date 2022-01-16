@@ -12,7 +12,7 @@
 
             // assign the separatorIdx and endPartBeginIdx
             // only if the separator is not null in 
-            // order to avoid an exception through 
+            // order to avoid an exception thrown 
             // by str.IndexOf(separator)
             if (separator != null)
             {
