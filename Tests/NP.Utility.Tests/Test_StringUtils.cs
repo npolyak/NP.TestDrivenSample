@@ -5,7 +5,7 @@ namespace NP.Utility.Tests
 {
     public static class Test_StringUtils
     {
-        [Theory]
+        [Theory] // Theory attribute makes it an XUnit test with possible various combinations of input arguments
         [InlineData(1, "Hello World!", "ll", "He", "o World!")]
         [InlineData(2, "Hello World!", "Hel", "", "lo World!")]
         [InlineData(3, "Hello World!", "d!", "Hello Worl", "")]
@@ -15,14 +15,16 @@ namespace NP.Utility.Tests
         public static void BreakStringIntoTwoParts_Test
         (
             double testOrder,
-            string str,
+            string str, 
             string? separator,
-            string? expectedStartStrPart,
+            string? expectedStartStrPart, 
             string? expectedEndStrPart
         )
         {
+            // break string into two parts
             (string startStrPart, string endStrPart) = str.BreakStringIntoTwoParts(separator);
 
+            // error out if the expected parts do not match the corresponding real part
             Assert.Equal(expectedStartStrPart, startStrPart);
             Assert.Equal(expectedEndStrPart, endStrPart);
         }
